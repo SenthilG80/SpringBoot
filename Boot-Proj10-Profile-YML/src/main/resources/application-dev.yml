@@ -1,0 +1,21 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+   driver-class-name: com.mysql.cj.jdbc.Driver
+   url: jdbc:mysql:///ntspbms616db
+   username: root
+   password: root
+   dbcp2:
+        max-total: 100
+        initial-size: 10
+        max-conn-lifetime-millis: 10000000
+   type:  org.apache.commons.dbcp2.BasicDataSource
+ 
+
+
+ 
+
+
+

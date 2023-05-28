@@ -1,0 +1,39 @@
+
+emp: 
+   info: 
+   # for simple properties
+           empNo: 1001
+           empName: Raja
+           empAddrs: Chennai
+           
+           # for Array  properties
+           favColors:
+               -red
+               -yellow
+               -green
+       # for List  properties         
+           nickNames:
+               - raj
+               - maharaj
+               - samarat maharaj
+       # for Set properties   
+           phoneNumbers:
+                - 99009823
+                - 99875544
+                - 32423423
+                
+           # for Map  properties   
+           idDetails:
+                aadharno: 34324234
+                voterid: 3243243
+                panno: 2432535
+                
+            # for Has-A  properties       
+            
+           company: 
+                name: sairam
+                Size: 234
+                addrs: shridi
+                pinCode: 324234
+            
+               
