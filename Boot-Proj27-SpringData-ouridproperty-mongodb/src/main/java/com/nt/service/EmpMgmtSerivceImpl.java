@@ -3,6 +3,8 @@ package com.nt.service;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -37,6 +39,19 @@ public class EmpMgmtSerivceImpl implements IEmpManagementService {
 
 		return empRepo.findById(id).orElseThrow(()->new IllegalArgumentException("Invalid ID"));
 		
+	}
+
+
+	@Override
+	public List<Employee> fetchEmployeeBySalaryRange(double start, double end) {
+		return empRepo.findBySalaryBetween(start, end);
+	}
+
+
+	@Override
+	public Employee fetchEmployeeByName(String name) {
+
+		return empRepo.findByEname(name);
 	}
 
 

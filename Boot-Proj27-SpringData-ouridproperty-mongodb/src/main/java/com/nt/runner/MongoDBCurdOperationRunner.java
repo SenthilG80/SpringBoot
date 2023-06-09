@@ -17,23 +17,23 @@ public class MongoDBCurdOperationRunner implements CommandLineRunner {
 	 
 	@Override
 	public void run(String... args) throws Exception {
-		Employee emp=new Employee();
-		emp.setEno(new Random().nextInt(10000));
-		emp.setEname("Rajesh");
-		emp.setSalary(101010.0f);
-		emp.setEadd("Chennai");
-		emp.setVaccinated(true);
-		System.out.println(empSerive.savedDocument(emp));
-		System.out.println("_____________________________________");
-		
-		empSerive.findAllEmployees().forEach(System.out::println);
-		
-		System.out.println("_____________________________________");
-		
-		System.out.println(empSerive.findEmployeeById(411));
-		
-		
-		
+//		Employee emp=new Employee();
+//		emp.setEno(new Random().nextInt(10000));
+//		emp.setEname("Rajesh");
+//		emp.setSalary(101010.0f);
+//		emp.setEadd("Chennai");
+//		emp.setVaccinated(true);
+//		System.out.println(empSerive.savedDocument(emp));
+//		System.out.println("_____________________________________");
+//		
+//		empSerive.findAllEmployees().forEach(System.out::println);
+//		
+//		System.out.println("_____________________________________");
+//		
+//		System.out.println(empSerive.findEmployeeById(411));
+//		
+//		empSerive.fetchEmployeeBySalaryRange(100000.0, 200000.0).forEach(System.out::println);
+		System.out.println(empSerive.fetchEmployeeByName("Rajesh"));
 	}	
 	
 
