@@ -8,5 +8,11 @@
 </head>
 <body  style="background-color: white;">
  <h1 style="color:yellow;text-align:center">WELCOME2.JSP(HOME PAGE)</h1>
+ <h1 style="color:white;text-align:center"><a href="season"> 
+    <button style="background-color: red; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px;">
+ FIND SEASON
+ </button>
+ 
+ </a></h1>
 </body>
 </html>
