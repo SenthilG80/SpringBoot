@@ -11,6 +11,7 @@ public interface IEmployeeMgmtService {
   public String updateEmployee(EmployeeInfo emp);
   public String deleteEmployee(int no);
   public List<Integer> showAllDepts();
+  public boolean isDesgRejected(String desg);
   
   
   

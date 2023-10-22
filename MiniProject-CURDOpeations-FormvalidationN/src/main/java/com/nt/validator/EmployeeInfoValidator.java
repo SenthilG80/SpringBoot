@@ -17,6 +17,7 @@ public class EmployeeInfoValidator implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
+		System.out.println("EmployeeInfoValidator.validate()");
 		// TODO Auto-generated method stub
        EmployeeInfo emp=(EmployeeInfo)target;
        
@@ -30,12 +31,12 @@ public class EmployeeInfoValidator implements Validator {
        else if (emp.getJob().length()<5 || emp.getJob().length() >10)
     	   errors.rejectValue("job", "emp.job.length");
        
-       
+       if(!errors.hasFieldErrors("sal")) {
        if(emp.getSal()==null )
     	   errors.rejectValue("sal", "emp.salary.required");
        else if (emp.getSal()<10000 || emp.getSal() >200000)
     	   errors.rejectValue("sal", "emp.salary.range");
-       
+       }
        if(emp.getDeptno()==null )
     	   errors.rejectValue("deptno", "emp.deptno.required");
 

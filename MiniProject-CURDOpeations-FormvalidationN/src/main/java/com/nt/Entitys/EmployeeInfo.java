@@ -13,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Data;
 
 @Entity
@@ -30,6 +31,8 @@ public class EmployeeInfo implements Serializable{
 	@Column(length = 20)
 	private String job="CLERK";
     private Integer deptno=10;
+    @Transient
+    private String vflag="no";
 	
 	
 }

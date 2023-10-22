@@ -80,17 +80,23 @@ public class EmployeeOperationsController {
 	
 	@PostMapping("/add")
 	public	String registerEmployee(@ModelAttribute("emp")EmployeeInfo emp, HttpSession ses, BindingResult errors) {
-       if (empValidator.supports(EmployeeInfo.class)) {
+      if(emp.getVflag().equalsIgnoreCase("no")) {
+		
+		if (empValidator.supports(EmployeeInfo.class)) {
     	    empValidator.validate(emp, errors);
+    	    
+    	    //Application Logic Errors
+    	    if(empService.isDesgRejected(emp.getJob()))
+    	         errors.rejectValue("job", "emp.desg.rejected");
+    	    
     	    if(errors.hasErrors())
     	    	return "Employee_register";
-    	   
        }
-		
+      }
 		
 		String result=empService.addEmployee(emp);
-       ses.setAttribute("resultMsg", result);     
-		return "redirect:report";
+         ses.setAttribute("resultMsg", result);     
+	     return "redirect:report";
 		
 	}
 	
@@ -104,12 +110,14 @@ public class EmployeeOperationsController {
 	
 	@PostMapping("/edit")
 	public String procesEditFormSubmission(@ModelAttribute("emp")EmployeeInfo info, RedirectAttributes attrs,BindingResult errors) {
-		  if (empValidator.supports(EmployeeInfo.class)) {
+	 if(info.getVflag().equalsIgnoreCase("no")) {
+		
+		if (empValidator.supports(EmployeeInfo.class)) {
 	    	    empValidator.validate(info, errors);
 	    	    if(errors.hasErrors())
-	    	    	return "employee_edit";
-	    	   
+	    	    	return "employee_edit";   
 	       }
+	 }
 		String resultMsg=empService.updateEmployee(info);
 		attrs.addFlashAttribute("resultMsg", resultMsg);
          return "redirect:report";
