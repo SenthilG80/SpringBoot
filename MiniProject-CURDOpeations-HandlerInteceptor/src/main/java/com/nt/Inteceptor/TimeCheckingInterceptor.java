@@ -17,7 +17,7 @@ public class TimeCheckingInterceptor implements HandlerInterceptor {
 			throws Exception {
 		LocalDateTime ltd=LocalDateTime.now();
 		int hour=ltd.getHour();
-		if(hour>=9 && hour<=21)
+		if(hour>=9 && hour<=24)
 			return true;
 		else {
 			RequestDispatcher rd=req.getRequestDispatcher("/timeout.jsp");

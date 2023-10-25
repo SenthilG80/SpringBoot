@@ -8,12 +8,13 @@
 <title>Mini Spring Boot Project</title>
 </head>
 <body>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"/> 
 <h1 style="color:red;text-align:center">Employee Report Page</h1>
 
 <c:choose>
   <c:when test="${!empty result}">
-   <table border="1" bgcolor="cyan" align="center">
-       <tr>
+   <table  align="center" class="table table-striped">
+       <tr class="thead-dark">
            <th>Emp No</th><th>Emp Name</th><th>Emp Designation</th><th>Emp Salary</th><th>Dept Number</th>
        </tr>
         <c:forEach var="emp" items="${result}">
