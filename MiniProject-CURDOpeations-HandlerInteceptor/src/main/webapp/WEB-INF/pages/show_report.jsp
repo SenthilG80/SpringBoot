@@ -13,7 +13,7 @@
 
 <c:choose>
   <c:when test="${!empty result}">
-   <table  align="center" class="table table-striped">
+   <table  align="center" class="table table-hover">
        <tr class="thead-dark">
            <th>Emp No</th><th>Emp Name</th><th>Emp Designation</th><th>Emp Salary</th><th>Dept Number</th>
        </tr>
