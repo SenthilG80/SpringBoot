@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 style="color:yellow; text-align:center">Employee Edit Page</h1>
+
+<form th:action="@{/employee/edit}" method="post"  th:object="${emp}">
+ <table border="0" align="center" bgcolor="cyan">
+ <tr>
+        <td>Employee Number::</td>
+         <td><input type="text"  th:field="*{empNo}" readonly="true"/></td>
+     </tr>
+       <tr>
+        <td>Employee Name::</td>
+         <td><input type="text"  th:field="*{ename}" /></td>
+     </tr>
+        <tr>
+        <td>Employee Job::</td>
+         <td><input type="text"  th:field="*{job}" /></td>
+     </tr>
+        <tr>
+        <td>Employee Salary::</td>
+         <td><input type="text"  th:field="*{sal}" /></td>
+     </tr>
+       <tr>
+         <td colspan="2"><input type="submit"  value="update"></td>
+     </tr>
+ 
+ </table>
+</form>
+</body>
+</html>
